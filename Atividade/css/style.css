@@ -1,0 +1,15 @@
+/*configurations default*/
+html,body{height: 100%;}
+body{
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+}
+/*Wrapper*/
+.wrapper{
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+#page-wrapper{
+	margin:0; padding: 0 15px; position: relative !important; height: 100%;
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="provaApp">
+<head>
+	<meta charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://bootswatch.com/lumen/bootstrap.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+	<div class="wrapper">
+	<div ng-controller="ProvaCtrl">
+		
+		<div class="jumbotron text-center"><h1>Atividade Prefeitura</h1></div>		
+<div id="page-wrapper">
+		<div class="row">
+	<section class="col-md-4 col-lg-4 col-sx-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Faça sua escolha</h3>
+			</div>
+			<div class="panel-body">
+				<form name="featureForm" class="form-horizontal">
+					<fieldset>
+						<div class="form-group col-md-8 col-lg-8">
+						<select ng-model="propriedade.Type" class="form-control" ng-required="true" name="opicoes">
+							<option value="">Selecione a opção</option>
+							<option value="Ciclovia">Ciclovia</option>
+							<option value="Ciclofaixa Móvel">Móvel</option>
+							<option value="Ciclofaixa">Ciclofaixa</option>
+							<option value="Rota">Rota</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<button ng-click="isProperty(propriedade)" class="btn btn-primary">Verificar</button>
+					</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</section>
+	
+  <section class="col-md-8 col-lg-8 col-sx-12">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Escolhido:</th>
+					<th>Endereço:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="ender in endereco">					
+					<td>{{endereco.Type}}</td>
+					<td>{{endereco.Description}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</div>
+		</div>
+	</div>
+</div>
+<!-- Scripts -->
+	<script src="vendor/angular.js"></script>
+	<script src="app.js"></script>
+	<script src="js/provaCtrl.js"></script>
+</body>
+</html>

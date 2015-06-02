@@ -1,0 +1,6 @@
+# Ignorar pasta
+node_modules
+bower_components
+
+# Ignorar arquivo
+npm-debug.log

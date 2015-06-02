@@ -1,0 +1,9 @@
+/*Body fonts*/
+body{
+	font-family: 'Roboto', sans-serif;
+}
+/*Wrapper*/
+.wrapper{
+	width: 100%;
+	overflow: hidden;
+}
