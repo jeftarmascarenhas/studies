@@ -1,0 +1,28 @@
+{
+  "name": "studies-angular",
+  "version": "1.0.0",
+  "description": "studies angular jeftar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jefter/studies"
+  },
+  "keywords": [
+    "angularjs",
+    "angular-studies"
+  ],
+  "author": "Jeftar Mascarenhas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jefter/studies/issues"
+  },
+  "homepage": "https://github.com/jefter/studies",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "express": "^4.13.0",
+    "nodemon": "^1.3.7"
+  }
+}

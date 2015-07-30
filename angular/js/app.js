@@ -1,0 +1,1 @@
+angular.module('listaTelefonica',['controllerLista', 'meusComponentes','ngMessages']);
