@@ -1,1 +1,1 @@
-angular.module('listaTelefonica',['controllerLista', 'meusComponentes','ngMessages']);
+angular.module('listaTelefonica',['controllerLista', 'meusComponentes', 'filtersBotan','ngMessages']);
