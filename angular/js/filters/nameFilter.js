@@ -10,8 +10,7 @@ angular.module('listaTelefonica').filter('name',function () {
 			if(/(da|de)/.test(name)) return name;
 
 			return name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
-		});
-		console.log(listaDeNomesFormatada);
+		});		
 		return listaDeNomesFormatada.join(" ");
 	};
 });
