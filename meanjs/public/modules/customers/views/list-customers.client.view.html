@@ -11,6 +11,9 @@
 				<span data-ng-bind="customer.user.displayName"></span>
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="customer.name"></h4>
+            Address: {{customer.address}}<br/>
+            States: {{customer.states}}<br/>
+            Country: {{customer.country}}<br/>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!customers.$resolved || customers.length">

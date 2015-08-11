@@ -9,7 +9,10 @@ angular.module('customers').controller('CustomersController', ['$scope', '$state
 		$scope.create = function() {
 			// Create new Customer object
 			var customer = new Customers ({
-				name: this.name
+				name: this.name,
+				address: this.address,
+				states: this.states,
+				country: this.country
 			});
 
 			// Redirect after save
@@ -18,6 +21,9 @@ angular.module('customers').controller('CustomersController', ['$scope', '$state
 
 				// Clear form fields
 				$scope.name = '';
+				$scope.address ='';
+				$scope.states ='';
+				$scope.country ='';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

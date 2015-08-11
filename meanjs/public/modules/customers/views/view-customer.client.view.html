@@ -1,6 +1,9 @@
 <section data-ng-controller="CustomersController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="customer.name"></h1>
+		Address: {{customer.address}}<br/>
+        States: {{customer.states}}<br/>
+        Country: {{customer.country}}<br/>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == customer.user._id))">
 		<a class="btn btn-primary" href="/#!/customers/{{customer._id}}/edit">
