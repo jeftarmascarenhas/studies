@@ -72,16 +72,59 @@ exports.delete = function(req, res) {
 /**
  * List of Customers
  */
+// exports.list = function(req, res) { 
+// 	Customer.find().sort('-created').populate('user', 'displayName').exec(function(err, customers) {
+// 		if (err) {
+// 			return res.status(400).send({
+// 				message: errorHandler.getErrorMessage(err)
+// 			});
+// 		} else {
+// 			res.jsonp(customers);
+// 		}
+// 	});
+// };
+
 exports.list = function(req, res) { 
-	Customer.find().sort('-created').populate('user', 'displayName').exec(function(err, customers) {
-		if (err) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
-		} else {
-			res.jsonp(customers);
+
+	var count = req.query.count || 5;
+	var page = req.query.page || 1;
+
+	//Filters use ngTable
+	var filter = {	
+		filters: {
+			mandatory:{
+				contains: req.query.filter
+			}
 		}
-	});
+	};
+	//Pagination list
+	var pagination = {
+		start: (page -1) * count,
+		count: count
+	};
+	//Ordenation list
+	var sort = {
+		sort:{
+			desc: '_id'
+		}
+	};
+
+	Customer
+		.find()
+		.filter(filter)
+		.order(sort)
+		.page(pagination, function function_name (err, customers) {
+			
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				res.jsonp(customers);
+			}
+
+		});
+
 };
 
 /**
