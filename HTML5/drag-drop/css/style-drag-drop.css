@@ -1,0 +1,16 @@
+/*reset*/
+*{margin: 0; padding: 0;}
+body{
+	font-family: 'Arial';
+}
+.container{
+	margin: 0 auto;
+	max-width: 1170px;
+}
+
+#drag-drp-about h1{
+	color: #555;
+	font-size: 22px;
+	text-align: center;
+}
+
