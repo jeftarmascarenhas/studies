@@ -10,15 +10,14 @@
 
 			$scope.app = 'Lista Telefonica';
 
-			$scope.teste = 'teste';
-
 			var carregarContatos = function () {
 				contatosAPI.getContatos()
 				.success(function (data) {
+
 					$scope.contatos = data;
 					
 				}).error(function (data, status) {
-					$scope.message = 'Aconteceu um problema: ' + data;
+					$scope.error = 'Não fui possível carregar';
 					console.log(status);
 				});
 			};
@@ -27,10 +26,7 @@
 				operadoraAPI.getOperadora()
 				.success(function (data) {
 					$scope.operadoras = data;
-				}).error(function  (data, status) {
-					$scope.message = 'Aconteceu um problema: ' + data;
-					console.log(status);
-				});	
+				});
 			};
 
 			$scope.adicionarContato = function (contato) {
