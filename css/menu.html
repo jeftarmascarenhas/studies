@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Menu Simple HTML</title>
+	<link rel="stylesheet" href="">
+
+<style>
+/*reset simple*/
+*{margin: 0; padding: 0;}
+ul{ list-style: none; }
+a{text-decoration: none;}
+body{font-family: Arial;}
+
+/*Style menu*/
+.nav{
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 5px;
+	display: block;
+}
+.nav li{
+	float: left;
+	position: relative;
+}
+
+.nav ul>li>a{
+	width: 150px;
+	float: left;
+	background-color: #f0f0f0;
+	color: #333;
+	transition:  all 0.3s linear;
+}
+.nav a:hover{background-color: #ccc;}
+
+.nav a span{
+	background-color: #999;
+	width: 0%;
+	margin: 0 2px;	
+	text-align: center;
+	display: block;
+	transition:  all 0.3s linear;
+}
+.nav a span:hover{width: 100%;}
+.nav li ul{
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	transition:  all 0.3s linear;
+
+}
+.nav li:hover ul{opacity: 1; top: 29px;}
+.nav li ul li a{
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+</style>
+
+</head>
+<body>
+
+	<nav class="nav">
+		<ul>
+			<li><a href="#"><span>Home</span></a></li>
+			<li>
+				<a href="#"><span>Services</span></a>
+				<ul>
+					<li><a href="#">Sub-menu</a></li>
+					<li><a href="#">Sub-menu</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><span>Portfolio</span></a></li>
+			<li><a href="#"><span>About</span></a></li>
+			<li><a href="#"><span>Contacts</span></a></li>
+		</ul>
+	</nav>
+	
+</body>
+</html>

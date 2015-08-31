@@ -11,19 +11,13 @@
 
 <body ng-controller="listaTelefonicaCtrl">
 
+<ui-pop title="Titulo Pop"></ui-pop>
+
 <div class="jumbotron">
 
 <meu-titulo titulo="{{app}}"></meu-titulo>
 
-{{$id}}
-		<ui-alert title="Ops, Aconteceu um problema!" >
-		{{$id}}
-			Teste de transcludesss!
-		</ui-alert>
-
-		<ui-alert title="Série sobre AngularJS">
-			Episódio 10 - Criando Diretivas - parte 1
-		</ui-alert>
+		<ui-alert title="{{error}}" ng-show="contatos.length <= 0">{{contatos.length}}</ui-alert>
 
 		<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
 		<table ng-show="contatos.length > 0" class="table table-responsive">
@@ -48,7 +42,7 @@
 			
 			<input type="text" class="form-control" name="telefone" ng-model="contato.telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
 
-			<input type="date" name="data" ng-model="contato.data" placeholder="" class="form-control">
+			<input type="text" name="data" ng-model="contato.data" placeholder="data" class="form-control" ui-date>
 
 			<select ng-model="contato.operadora" class="form-control" ng-options="operadora.nome + '(' + (operadora.preco | currency) + ')' for operadora in operadoras | orderBy: 'nome'">
 				<option value="">Selecione a operadora</option>
@@ -83,6 +77,8 @@
 <script src="js/controllers/controllerLista.js"></script>		
 <script src="js/directives/titulo-componentes.js"></script>		
 <script src="js/directives/uiAlertDirective.js"></script>		
+<script src="js/directives/uiPop.js"></script>		
+<script src="js/directives/uiDate.js"></script>		
 <script src="js/filters/nameFilter.js"></script>		
 <script src="js/filters/ellipsisFilter.js"></script>		
 
