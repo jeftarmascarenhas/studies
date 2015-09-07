@@ -11,13 +11,13 @@
 
 <body ng-controller="listaTelefonicaCtrl">
 
-<ui-pop title="Titulo Pop"></ui-pop>
+<ui-pop titulo="Titulo Pop"></ui-pop>
 
 <div class="jumbotron">
 
 <meu-titulo titulo="{{app}}"></meu-titulo>
 
-		<ui-alert title="{{error}}" ng-show="contatos.length <= 0">{{contatos.length}}</ui-alert>
+		<ui-alert title="{{error}}" ng-show="contatos.length">{{contatos.length}}</ui-alert>
 
 		<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você está buscando?"/>
 		<table ng-show="contatos.length > 0" class="table table-responsive">

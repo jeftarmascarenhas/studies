@@ -1,4 +1,4 @@
-angular.module('meusComponentes',[]).directive('meuTitulo', function () {
+angular.module('listaTelefonica').directive('meuTitulo', function () {
 	
 	var directive = {};
 

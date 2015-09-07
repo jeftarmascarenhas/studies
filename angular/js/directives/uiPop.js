@@ -1,10 +1,10 @@
 angular.module('listaTelefonica').directive('uiPop', function () {
 	return {
-		templateUrl: 'view/pop.html',
 		restrict: 'AE',
 		scope:{
-			title: '@'
+			titulo: '@titulo'
 		},
+		templateUrl: 'view/pop.html',
 		transclude: true
 	};
 });

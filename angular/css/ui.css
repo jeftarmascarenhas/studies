@@ -22,7 +22,7 @@
 }
 
 .ui-pop{
-	position: fixed;
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -30,12 +30,47 @@
 	z-index: 1000;
 	overflow: hidden;
 	outline: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, .5);
 }
 
 .ui-pop-dialog{
-	transform: translate(0,0);
+	transform: translate(-50%, 5%);
+	margin-left: 50%;
+	max-width: 400px;
+	padding: 8px;
+	background-color: #fff;
+	box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
+	border-radius: 1px;
+}
+
+.ui-pop-header{
+ border-bottom: 1px solid #ccc;
+}
+.ui-pop-header .ui-pop-title{
+	float: left;
+	font-size: 1.3em;
+}
+
+.ui-pop-body {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+.ui-pop-footer {
+    position: relative;
+	padding-top: 5px;
+}
+.ui-pop-footer .cancelar {
+	float: right;
+}
+.ui-pop-footer:after, .ui-pop-footer:before{
+	content: '';
+	display: block;
+	clear: both;
 }
 
 .fade{
-
+display: none;
 }

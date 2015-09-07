@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Animations CSS</title>
+	<link rel="stylesheet" href="">
+
+<style>
+	
+div{
+	width: 200px;
+	height: 200px;
+	background-color: coral;
+	animation: square-to-circle 2s, 1s infinite cubic-bezier(1,.015,.295,1.225) alternate;
+}
+
+@keyframes square-to-circle{
+	0%{ 
+		border-radius: 0 0 0 0;
+		background-color: coral;
+		transition: rotate(0deg);
+	}
+	25%{ 
+		border-radius: 50% 0 0 0;
+		background-color: darksalmon;
+		transition: rotate(45deg);
+	}
+	50%{ 
+		border-radius: 50% 50% 0 0;
+		background-color: indianred;
+		transition: rotate(90deg);
+	}
+	75%{ 
+		border-radius: 50% 50% 50% 0;
+		background-color: lightcoral;
+		transition: rotate(135deg);
+	}
+	100%{ 
+		border-radius: 50%;
+		background-color: darksalmon;
+		transition: rotate(180deg);
+	}
+}
+
+</style>
+
+</head>
+<body>
+
+	<div>
+		
+	</div>
+	
+</body>
+</html>
