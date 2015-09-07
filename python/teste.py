@@ -13,3 +13,9 @@ result = (a*b) / 2
 print("O valor e: ",result)
 print("O valor e: %i" %result)
 print("O valor e: " + str(result))
+
+
+login = input('Login:')
+password = input('password')
+
+print ("O usuário é %s, e a senha é %s" % (login, password))

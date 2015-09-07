@@ -48,6 +48,12 @@
 				
 			};
 				
+			$scope.isContatoSelecionado = function (contatos) {
+				return contatos.some(function (contato) {
+					return contato.selecionado;
+				});
+			};
+
 			carregarContatos();
 			carregarOperadoras();
 			

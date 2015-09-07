@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ranger control canvas HTML5</title>
+	<link rel="stylesheet" href="canvas.css">
+
+<script>
+
+(function  () {
+	
+	function init () {
+	
+		var inpuntElement = document.getElementsByTagName('input')[0];
+		var canvas = document.getElementsByTagName('canvas')[0];
+
+		var c = canvas.getContext('2d');
+		c.fillStyle = 'hsl(160, 80%, 50%)';
+
+		function draw (radius) {
+			c.clearRect(0,0,canvas.width,canvas.height);
+			c.beginPath();
+			c.arc(200,200,radius,0,2*Math.PI,false);
+			c.fill();
+		}
+
+
+		inpuntElement.addEventListener('change', function(){draw(this.value);}, false);
+
+
+	}
+
+
+	window.addEventListener('load', init, false);
+})();
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<form method="get">
+		<label for="">Radius: <input type="range" name="number" step=1 min=1 max=100 value="" placeholder=""></label>
+	</form>
+
+	<canvas width="400" height="400"></canvas>
+
+</div>
+	
+</body>
+</html>
