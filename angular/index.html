@@ -14,7 +14,7 @@
 <ui-pop titulo="Titulo Pop"></ui-pop>
 
 <div class="jumbotron">
-
+<ui-accordion></ui-accordion>
 <meu-titulo titulo="{{app}}"></meu-titulo>
 
 		<ui-alert title="{{error}}" ng-show="contatos.length">{{contatos.length}}</ui-alert>
@@ -33,7 +33,7 @@
 				<td>{{contato.nome | name | ellipsis:10}}</td>
 				<td>{{contato.telefone}}</td>
 				<td>{{contato.operadora.nome}}</td>
-				<td>{{contato.data | date:'dd/MM/yyyy HH:mm'}}</td>
+				<td>{{contato.data | date:'dd/MM/yyyy'}}</td>
 			</tr>
 		</table>
 		<hr/>
@@ -69,7 +69,9 @@
 </div>
 
 <script src="lib/angular/angular.js"></script>
-<script src="lib/angular/angular-messages.js"></script>	
+<script src="lib/angular/angular-messages.js"></script>
+<script src="lib/ngMask/ngMask.js"></script>	
+<script src="lib/uiAccordion/uiAccordion.js"></script>	
 <script src="js/app.js"></script>	
 <script src="js/valeu/configValeu.js"></script>	
 <script src="js/services/contatosAPIService.js"></script>	
@@ -77,8 +79,7 @@
 <script src="js/controllers/controllerLista.js"></script>		
 <script src="js/directives/titulo-componentes.js"></script>		
 <script src="js/directives/uiAlertDirective.js"></script>		
-<script src="js/directives/uiPop.js"></script>		
-<script src="js/directives/uiDate.js"></script>		
+<script src="js/directives/uiPop.js"></script>				
 <script src="js/filters/nameFilter.js"></script>		
 <script src="js/filters/ellipsisFilter.js"></script>		
 

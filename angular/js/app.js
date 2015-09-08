@@ -1,1 +1,1 @@
-angular.module('listaTelefonica',['controllerLista','ngMessages']);
+angular.module('listaTelefonica',['controllerLista','ngMessages', 'ngMask', 'uiAccordion']);
