@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Array</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+<input type="text" id="numero"  placeholder="Compare com meu segredo!">
+<input type="submit" id="adivinha" name="" value="Compare com meu segredo!">
+
+
+	<p id="text-numero"></p>
+
+
+
+<script>
+
+
+var paragraph = document.querySelector('#text-numero');
+
+function eventClick (elementText, elementAction) {
+	var elem = document.getElementById(elementText);
+	var buttonAction = document.getElementById(elementAction);
+	var leter;
+	function getText () {
+		paragraph.innerHTML = elem.value;
+		
+	};
+
+	function getterText () {
+		alert(paragraph.innerHTML);
+	}
+	elem.addEventListener('keyup', getText, false);
+	buttonAction.addEventListener('click', getterText, false);
+
+};
+
+eventClick('numero', 'adivinha');
+
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "exemple-sockeio",
+  "version": "0.0.1",
+  "description": "exemples basic socket-io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sockeio"
+  ],
+  "author": "Jeftar Mascarenhas",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^1.3.6"
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Use a closure a callback of temp interval</title>
+	<link rel="stylesheet" href="">
+
+<style>
+	.box{
+		width: 10vw;
+		height: 10vh;
+		background-color: #6A7693;
+		position: absolute;
+
+	}
+</style>
+
+</head>
+<body>
+	
+<div class="box"></div>
+
+<script>
+
+
+function animateIt (elementClass) {
+
+	var element = document.querySelector(elementClass);
+	var count =0;
+	var timer = setInterval(function () {
+		if(count < 100){
+			element.style.left = element.style.top=count + 'px';
+			count++;
+
+		}
+		else if(count >= 99 && count < 200){
+			element.setAttribute('style','border-radius:'+count+'%');
+			element.style.left = element.style.right=count+ 1 + 'px';
+			count++;
+		}
+		else{
+			clearInterval(timer);
+		}
+	},10);
+};
+
+animateIt('.box');
+	
+
+</script>
+
+
+</body>
+</html>
