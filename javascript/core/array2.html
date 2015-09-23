@@ -17,6 +17,16 @@
 
 
 <script>
+function isStreamSupported () {
+	if(navigator.getUserMedia)
+
+		return true;
+
+	else
+
+		return false;
+	
+};
 
 
 var paragraph = document.querySelector('#text-numero');

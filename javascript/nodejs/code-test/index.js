@@ -13,5 +13,14 @@ var http = require('http');
 
 http.createServer(function (req, res) {
 	res.writeHead(200, {'Content-Type': 'image/png'});
-	fs.createReadStream('./image.png').pipe(res);
-}).listen(3000);
+	
+	fs.createReadStream('./image-teste.png').pipe(res);
+	var stream = fs.createReadStream('./image-teste.png');
+	
+	stream.on('data', function (chuck) {
+		console.log(chuck);
+	});
+
+}).listen(3000, function () {
+	console.log('Server running 3000');
+});
