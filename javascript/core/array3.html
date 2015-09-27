@@ -48,29 +48,46 @@
 
 <script>
 
+var p = document.createElement('p');
+var article = document.querySelector('.key-word');
+p.textContent = 'Element Create';
+document.body.appendChild(p);
+p.nodeType = Node.ELEMENT_NODE;
+p.firstChild.nodeType == Node.TEXT_NODE;
+
+var node = document.documentElement.firstChild;
+if(node.nodeType != Node.COMMENT_NODE){
+	console.log('You should comment your code well');
+}
+
+
+
+
+
+
 //obj=objeto alvo - evt= evento ex: click, kypress - fn funcao a ser executada
 
-function capturaEventos (obj,evt,fn) {
-	if(obj.addEventListener){
-		obj.addEventListener(evt,fn,true);
-	}
-	else if(obj.attachEvent){
-		var evt = 'on' + evt;
-		obj.attachEvent(evt,fn);
-	}
+// function capturaEventos (obj,evt,fn) {
+// 	if(obj.addEventListener){
+// 		obj.addEventListener(evt,fn,true);
+// 	}
+// 	else if(obj.attachEvent){
+// 		var evt = 'on' + evt;
+// 		obj.attachEvent(evt,fn);
+// 	}
 
-}
+// }
 
-function geral() {
-	capturaEventos( document.getElementById('formulario'), 'submit', enviarFormulario );
-};
+// function geral() {
+// 	capturaEventos( document.getElementById('formulario'), 'submit', enviarFormulario );
+// };
 
-capturaEventos(window, 'load', geral);
+// capturaEventos(window, 'load', geral);
 
-function enviarFormulario (evt) {
-	var evt = evt ? evt : window.evt
-	var formulario = 
-}
+// function enviarFormulario (evt) {
+// 	var evt = evt ? evt : window.evt
+// 	var formulario = 
+// }
 
 
 

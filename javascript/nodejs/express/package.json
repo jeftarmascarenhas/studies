@@ -1,0 +1,17 @@
+{
+  "name": "development-node-express",
+  "version": "0.0.1",
+  "description": "Development with Node and Express",
+  "main": "meandowlark.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeftar Mascarenhas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "express3-handlebars": "^0.5.2",
+    "nodemon": "^1.7.1"
+  }
+}
