@@ -1,5 +1,6 @@
 var express = require('express')
   , app = express()
+  , fortune_module = require('./lib/fortune.js');
   ;
 
 app.set('port', process.env.PORT || 3000);
@@ -22,7 +23,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
   app.get('/', function (req, res) {
-      res.render('home');
+      res.render('home', {fortune1: fortune_module.getFortune()});
   });
 
   app.get('/about', function (req, res) {
