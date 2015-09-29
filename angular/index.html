@@ -14,7 +14,17 @@
 <ui-pop titulo="Titulo Pop"></ui-pop>
 
 <div class="jumbotron">
-<ui-accordion></ui-accordion>
+
+<ui-accordions>
+	<ui-accordion title="Accordion 1">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</ui-accordion>
+
+	<ui-accordion title="Accordion 2">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</ui-accordion>
+</ui-accordions>
+
 <meu-titulo titulo="{{app}}"></meu-titulo>
 
 		<ui-alert title="{{error}}" ng-show="contatos.length">{{contatos.length}}</ui-alert>
@@ -81,7 +91,7 @@
 <script src="js/controllers/controllerLista.js"></script>		
 <script src="js/directives/titulo-componentes.js"></script>		
 <script src="js/directives/uiAlertDirective.js"></script>		
-<script src="js/directives/uiPop.js"></script>				
+<script src="js/directives/uiPop.js"></script>							
 <script src="js/filters/nameFilter.js"></script>		
 <script src="js/filters/ellipsisFilter.js"></script>		
 

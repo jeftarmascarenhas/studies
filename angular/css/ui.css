@@ -74,3 +74,20 @@
 .fade{
 display: none;
 }
+
+/*Accordion*/
+.ui-accordion-title{
+	width: 100%;
+	background: #222;
+	color:#FFF;
+	padding: 5px;
+	margin: 0;
+}
+.ui-accordion-content{
+	border: 1px solid #222;
+	border-top: 0;
+	padding: 0 5px;
+	margin: 2px 0;
+	text-align: left;
+	margin: 0 0 10px 0;
+}
