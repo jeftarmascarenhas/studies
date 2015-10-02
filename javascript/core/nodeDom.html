@@ -8,34 +8,27 @@
 	<style>
 		*{padding: 0; margin: 0;}
 		div{
-			width: 1%;
-			height: 200px;
+			width: 400px;
+			height: 400px;
 			background: red;
 			position: absolute;
 			transtion: all 1s ease-out;
 
 		}
 		.removes{
-			animation: remove-in-action 10s steps(10) normal;
-			-webkit-animation: remove-in-action 10s steps(10) normal;
-			-moz-animation: remove-in-action 10s steps(10) normal;
+			animation: remove-in-action 1s normal ease-out;
+			-webkit-animation: remove-in-action 1s 2s normal ease-out;
+			-moz-animation: remove-in-action 1s 2s normal ease-out;
 		}
 		@keyframes remove-in-action{
-			0%{
-				width: 10%;
-				height: 200px;
+			from{
+				left: 5px
 				background: blue;
 			}
-						
-			50%{
-				width: 60%;
-				height: 80px;
-				background: red;
-
-			}	
-			100%{
-				width: 100%;
-				height: 200px;
+			to{
+				width: 5px;
+				height: 5px;
+				left: 1000px;
 				background: red;
 
 			}
@@ -50,14 +43,31 @@
 <script>
 'use strict'
 
-function toggleAction (element, classAction) {
-	document.querySelector(element).classList.add(classAction);
+function toggleAction (element, actions, classAction) {
+	var actions = actions;
+	switch(actions){
+		case actions == contains:
+			actions = contains;
+			break;
+		case actions == remove:
+			actions = remove;
+			break;
+		case actions == add:
+			actions = add;
+			break;
+		default: 
+			actions = toggle;
+			break;
+	};
+	document.querySelector(element).classList.actions(classAction);
 };
 
 
-document.querySelector('button').addEventListener('click', function(){
-		toggleAction('div', 'removes');
-}, false);
+document.querySelector('button')
+	.addEventListener('click', function () {
+		// document.querySelector('div').classList.toggle('removes');
+		toggleAction('div', add, 'removes');
+	}, false);
 	
 </script>
 	
