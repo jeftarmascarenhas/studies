@@ -5,11 +5,11 @@ angular.module('product').controller('productController', productController);
 productController.$inject = ['$scope'];
 
 function productController ($scope) {
-		$scope.contatos = [
-			{nome:'Jeftar', telefone:812338800},
-			{nome:'Samires', telefone:812338800},
-			{nome:'Kevin', telefone:812338800},
-			{nome:'Sales', telefone:812338800}
+		$scope.products = [
+			{name:'Sandalias', price:30},
+			{name:'Cueca', price:20},
+			{name:'Par de meioa', price:10},
+			{name:'Carteira', price:15}
 		];
 }
 

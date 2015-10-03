@@ -33,7 +33,7 @@ app.use(express.static(__dirname + '/public'));
   })
 
   //custom 404
-  app.use('*'function (req, res) {
+  app.use('*',function (req, res) {
       res.status(404);
       res.render('404');
   });

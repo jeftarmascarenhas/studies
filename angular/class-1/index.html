@@ -14,17 +14,17 @@
 <hr>
 
 <label for="">Any: <input ng-model="search.$"></label><br>
-<label for="">Nome apenas: <input ng-model="search.nome"></label><br>
-<label for="">Telefones apenas: <input ng-model="search.telefone"></label><br>
+<label for="">Nome apenas: <input ng-model="search.name"></label><br>
+<label for="">Telefones apenas: <input ng-model="search.price"></label><br>
 
 <table>
 	<tr>
 		<th>Name: </th>
 		<th>Telefone: </th>
 	</tr>
-	<tr ng-repeat="contato in contatos | filter:search:strict">
-		<td>{{contato.nome}}</td>
-		<td>{{contato.telefone}}</td>
+	<tr ng-repeat="product in products | filter:search:strict">
+		<td>{{product.name}}</td>
+		<td>{{product.price}}</td>
 	</tr>
 </table>
 
