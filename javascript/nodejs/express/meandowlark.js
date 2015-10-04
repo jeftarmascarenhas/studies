@@ -22,6 +22,13 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
 
+  app.use(function(req, res, next){
+    res.locals.showTests = app.get('env') !== 'production' &&
+    req.query.test === '1';
+    next();
+  });
+
+
   app.get('/', function (req, res) {
       res.render('home', {fortune1: fortune_module.getFortune()});
   });
@@ -31,6 +38,7 @@ app.use(express.static(__dirname + '/public'));
             fortunes[Math.floor(Math.random() * fortunes.length)];
       res.render('about', {fortune: randomFortune});
   })
+
 
   //custom 404
   app.use('*',function (req, res) {
@@ -46,6 +54,6 @@ app.use(express.static(__dirname + '/public'));
   })
 
   app.listen(app.get('port'), function () {
-    console.log('Express started on http//:localhost:3000' +
+    console.log('Express started on http//:localhost:' +
     app.get('port') + '; press Ctrl+C to terminate.');
   });
