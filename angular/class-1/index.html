@@ -5,32 +5,96 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Class-1</title>
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/style.css">
+
 
 </head>
 <body ng-controller="productController">
 
+<div class="container">
 
-<hr>
+<div class="jumbotrom">
+	<h1>teste</h1>
+</div>
 
-<label for="">Any: <input ng-model="search.$"></label><br>
-<label for="">Nome apenas: <input ng-model="search.name"></label><br>
-<label for="">Telefones apenas: <input ng-model="search.price"></label><br>
+<div class="row">
+ <div class="col-lg-6 col-md-6 col-xs-12">
+ 	<h1>Form</h1>
+<form enctype="multipart/form-data">
+	<div class="form-group">
+			<label for="">Name:</label>
+			<input type="text" ng-model="product.name" class="form-control">
+	</div>
+	<div clas="form-group">
+		<label for="">Description:</label>
+		<input type="text" ng-model="product.description" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="">Stock:</label>
+		<input type="text" ng-model="product.stock" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="">Price:</label>
+		<input type="text" ng-model="product.price" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="">Category:</label>
+		<input type="text" ng-model="product.category" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="">Image:</label>
+		<input type="file" fileread="product.imagem" class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="text" ng-model="product.imagem" value="{{product.imagem}}" class="form-control">
+	</div>
+	<button class="btn btn-default" ng-click="addProduct(product)">Cadastra</button>
+	<button class="btn btn-danger">Limpar</button>
 
-<table>
+</form>
+	
+</div>
+<div class="col-lg-6 col-md-6 col-xs-12">
+<h1>Search</h1>
+
+	<div class="form-group">
+			<label for="">Any:</label>
+			<input type="text" ng-model="search.$" class="form-control">
+	</div>
+	<div clas="form-group">
+		<label for="">Name Only:</label>
+		<input type="text" ng-model="search.name" class="form-control">
+	</div>
+	<div class="form-group">
+		<label for="">Price Only:</label>
+		<input type="text" ng-model="search.price" class="form-control">
+	</div>
+
+<table class="table table-striped">
 	<tr>
 		<th>Name: </th>
-		<th>Telefone: </th>
+		<th>Description: </th>
+		<th>Stock: </th>
+		<th>Price: </th>
+		<th>Category: </th>
 	</tr>
 	<tr ng-repeat="product in products | filter:search:strict">
 		<td>{{product.name}}</td>
+		<td>{{product.description}}</td>
+		<td>{{product.stock}}</td>
 		<td>{{product.price}}</td>
+		<td>{{product.category}}</td>
 	</tr>
 </table>
+</div>
+</div>
+</div>
+
 
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-messages.js"></script>
 <script src="app-class1.js"></script>
 <script src="js/productController.js"></script>
+<script src="js/services/productService.js"></script>
 </body>
 </html>

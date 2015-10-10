@@ -2,15 +2,28 @@
 
 angular.module('product').controller('productController', productController);
 
-productController.$inject = ['$scope'];
+productController.$inject = ['$scope', 'productService'];
 
-function productController ($scope) {
-		$scope.products = [
-			{name:'Sandalias', price:30},
-			{name:'Cueca', price:20},
-			{name:'Par de meioa', price:10},
-			{name:'Carteira', price:15}
-		];
+function productController ($scope, productService) {
+		
+		$scope.products = [];
+
+		var loadProducts = function() {
+
+			productService.getProducts()
+			.success(function(data){
+
+				$scope.products = data;
+
+			})
+			.error(function(data, status){
+				$scope.error = 'Não fui possível carregar';
+				console.log(status);
+			});
+		};
+
+		loadProducts();
 }
+
 
 })();

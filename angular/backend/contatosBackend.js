@@ -20,6 +20,14 @@ var operadoras = [
 	{nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1},
 	{nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2}
 ];
+
+var products = [
+      {name:'Sandalias', description:'Product description' , stock:20, price:30, category:'Calçados'},
+      {name:'Cueca box', description:'Product description' , stock:100, price:20, category:'Roupa intima'},
+      {name:'Par de meioa socket', description:'Product description' , stock:10, price:10, category:'Meias'},
+      {name:'Carteira de couro', description:'Product description' , stock:50, price:1, category:'Cateiras'}
+    ];
+
 port = process.env.PORT || 3412;
 app.listen(port, function  () {
   console.log('Start Server Port:  ', port);
@@ -43,4 +51,8 @@ app.post('/contatos', function(req, res) {
 
 app.get('/operadoras', function(req, res) {
   res.json(operadoras);
+});
+
+app.get('/products', function(req, res){
+  res.json(products);
 });
