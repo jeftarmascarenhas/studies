@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Test CSS</title>
+	<link rel="stylesheet" href="">
+
+<style>
+	*{margin: 0; padding: 0;}
+	html,body{height: 100%;}
+	.container{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: green;
+	}
+.montain {
+    max-width: 200px;
+    height: 375px;
+    background: #79CA79;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 90px 90px 0px 0px;
+}	
+	.nuvem {
+    position: absolute;
+    background-color: #fff;
+    width: 126px;
+    top: 10px;
+    /* z-index: 1; */
+    box-shadow: 0px 0px 5px #ccc;
+    height: 50px;
+    border-radius: 100%;
+    left: 182px;
+    animation: nuvens 5.3s infinite ease-in-out;
+}
+
+.nuvem:before {
+    height: 70px;
+    width: 58px;
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    border-radius: 100%;
+    left: 50%;
+    /* z-index: -999; */
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.nuvem:after {
+    height: 37px;
+    width: 38px;
+    position: absolute;
+    content: '';
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    left: 15%;
+    transform: rotate(-10deg) !important;
+    top: -17%;
+    box-shadow: -3px -1px 1px rgba(0,0,0,.2);
+    transform: translate(-50%,-50%);
+}
+
+.nuvem span {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 100%;
+    bottom: -5px;
+    right: 15px;
+}
+.nuvem span:before{
+    content:'';
+    position:absolute;
+    background-color:#fff;
+    height: 60px;
+    width: 60px;
+    bottom: -7px;
+    border-radius:50%;
+    right: 21px;
+    box-shadow: 1px 3px 2px rgba(0,0,0,.2), 43px -10px 0px rgba(255,255,255,1);
+}
+
+
+.gota {
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: 0;
+    right: 0px;
+    top: 0px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 19px solid rgba(10,200,200,.7);
+    border-radius: 100%;    
+    animation: gotas 2.0s infinite ease-out;
+}
+
+@keyframes gotas{
+    0%{
+        opacity:1;
+        top:30px;
+    }
+    100%{
+        opacity:0;
+        top:120px;
+    }
+}
+
+	@keyframes nuvens{
+		0%{
+			left:188px;
+		}
+		100%{
+			left:-210px;
+			opacity: 0;
+		}
+
+	}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+	<div class="montain">
+	</div>
+	<div class="nuvem">
+		<span></span>
+		<div class="gota"></div>
+	</div>	
+</div>
+	
+</body>
+</html>

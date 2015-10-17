@@ -5,14 +5,45 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Ranger control canvas HTML5</title>
 	<link rel="stylesheet" href="canvas.css">
+</head>
+<body>
+
+<div class="container">
+	<form method="get">
+		<label for="">Radius: <input type="range" id="radius" name="number" step=1 min=1 max=100 value="" placeholder=""></label>
+	</form>
+	<div id="teste"></div>
+	<canvas width="400" height="400"></canvas>
+
+</div>
+
+
+	<form method="get">
+		<p><label for="">Quadrado: <input type="range" id="quadrado" name="quadrado"  step=10 min=1 max=400 /></label></p>
+		<p>
+			<label for="">color: <input type="color" name="color" id="colors" placeholder=""></label>
+		</p>
+	</form>
+
+	<div id="cor" style="background:red; width:200px; height:200px;"></div>
 
 <script>
 
 (function  () {
 	
 	function init () {
-	
-		var inpuntElement = document.getElementsByTagName('input')[0];
+	     
+
+		var colors = document.getElementById('colors');
+		var corDiv = document.querySelector('#cor');
+
+		colors.addEventListener('change', function () {
+			corDiv.style.background = colors.value;
+		}, false);
+
+		var inpuntElement = document.getElementById('radius');
+		var inpuntElement2 = document.querySelector('#quadrado');
+		var testeDiv = document.querySelector('#teste');
 		var canvas = document.getElementsByTagName('canvas')[0];
 
 		var c = canvas.getContext('2d');
@@ -25,6 +56,20 @@
 			c.fill();
 		}
 
+		function quadrado (quadr){
+			var max = quadr + 5;
+			testeDiv.setAttribute
+			(
+				'style','width:'+max+'px;'
+				+'height:'+quadr+'px;'
+				+'transition: all 0.5s ease-out;'
+			);
+			// testeDiv.style.width = quadr + 'px';
+			// testeDiv.style.height = quadr + 'px';
+		}
+
+		inpuntElement2.addEventListener('change', function(){quadrado(this.value);},false);
+
 
 		inpuntElement.addEventListener('change', function(){draw(this.value);}, false);
 
@@ -36,18 +81,5 @@
 })();
 
 </script>
-
-</head>
-<body>
-
-<div>
-	<form method="get">
-		<label for="">Radius: <input type="range" name="number" step=1 min=1 max=100 value="" placeholder=""></label>
-	</form>
-
-	<canvas width="400" height="400"></canvas>
-
-</div>
-	
 </body>
 </html>

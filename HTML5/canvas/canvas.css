@@ -1,6 +1,6 @@
 *{margin: 0; padding: 0; border: 0;}
 
-div{
+.container{
 	display: flex;
 	flex-flow: row;
 	justify-content: flex-start;
@@ -17,4 +17,8 @@ form{
 	font-family: courier;
 	font-weight: bold;
 	padding: 10px;
+}
+
+#teste{
+	background-color: pink;
 }
