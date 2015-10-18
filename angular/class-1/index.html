@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Class-1</title>
+	<title>Products AngualrJS</title>
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
@@ -79,8 +79,8 @@
 		<th>Category: </th>
 	</tr>
 	<tr ng-repeat="product in products | filter:search:strict">
-		<td>{{product.name}}</td>
-		<td>{{product.description}}</td>
+		<td>{{product.name | name}}</td>
+		<td>{{product.description | limit:20}}</td>
 		<td>{{product.stock}}</td>
 		<td>{{product.price}}</td>
 		<td>{{product.category}}</td>
@@ -96,5 +96,6 @@
 <script src="app-class1.js"></script>
 <script src="js/productController.js"></script>
 <script src="js/services/productService.js"></script>
+<script src="js/filters/filters.js"></script>
 </body>
 </html>

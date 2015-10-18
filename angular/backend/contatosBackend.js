@@ -22,10 +22,10 @@ var operadoras = [
 ];
 
 var products = [
-      {name:'Sandalias', description:'Product description' , stock:20, price:30, category:'Calçados'},
-      {name:'Cueca box', description:'Product description' , stock:100, price:20, category:'Roupa intima'},
-      {name:'Par de meioa socket', description:'Product description' , stock:10, price:10, category:'Meias'},
-      {name:'Carteira de couro', description:'Product description' , stock:50, price:1, category:'Cateiras'}
+      {name:'sandalias de dedo', description:'Product description test name products teste' , stock:20, price:30, category:'Calçados'},
+      {name:'cueca box para gordos', description:'Product description' , stock:100, price:20, category:'Roupa intima'},
+      {name:'par de meioa socket', description:'Product description' , stock:10, price:10, category:'Meias'},
+      {name:'carteira de couro', description:'Product description' , stock:50, price:1, category:'Cateiras'}
     ];
 
 port = process.env.PORT || 3412;

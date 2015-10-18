@@ -12,3 +12,26 @@ http.createServer((req, res) => {
 fs.createReadStream(HTML_PATH).pipe(res);
 
 }).listen(3000);
+
+
+class Human {
+
+	constructor(name){
+		this.name = name;
+	}
+	toString() {
+		return "Hello, my name is " + this.name + ".";
+	}
+};
+
+class Person extends Human{
+
+	constructor(name, age){
+		super.constructor(name);
+		this.age = age;
+	}
+
+	toString(){
+		return super.toString() +  " I am a person and my age is " + this.age + ".";
+	}
+};

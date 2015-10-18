@@ -1,1 +1,1 @@
-angular.module('product',['ngMessages']);
+angular.module('product',['ngMessages', 'ngFilterProduct']);
